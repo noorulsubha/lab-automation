@@ -446,11 +446,11 @@
             </p>
             <p>
                 <i class="ti ti-phone"></i>
-                +91 98765 43210
+                +92 322-2510688
             </p>
             <p>
                 <i class="ti ti-map-pin"></i>
-                Industrial Area, India
+                Industrial Area, Pakistan
             </p>
             <p>
                 <i class="ti ti-world"></i>

@@ -2,7 +2,7 @@
 // ============================================
 // TEST MODEL
 // Location: app/Models/Test.php
-// Purpose: Handles all tests table operations
+// Purpose: Handles tests table operations
 // ============================================
 
 namespace App\Models;
@@ -11,7 +11,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Test extends Model
 {
-    // Fields that can be filled
+    // Database table name
+    protected $table = 'tests';
+
+    // Fields that can be saved
     protected $fillable = [
         'test_id',
         'product_id',
@@ -21,17 +24,8 @@ class Test extends Model
         'tester_name',
         'test_date',
         'user_id',
+        'product_image',
     ];
-
-    // Each test belongs to one product
-    public function product()
-    {
-        return $this->belongsTo(
-            Product::class,
-            'product_id',
-            'product_id'
-        );
-    }
 
     // Each test belongs to one user
     public function user()
@@ -43,7 +37,6 @@ class Test extends Model
     // generateTestId()
     // Purpose: Auto generate 12 digit test ID
     // Example: TSTEL00012024
-    // Called when new test record is created
     // ----------------------------------------
     public static function generateTestId($productId, $testType)
     {
@@ -56,19 +49,16 @@ class Test extends Model
             'mechanical' => 'MC',
         ];
 
-        // Get 2 letter code for test type
+        // Get 2 letter code
         $typeCode = $typeCodes[$testType] ?? 'XX';
 
-        // Get total tests count for roll number
-        $count = self::count() + 1;
-
-        // Pad with zeros - example: 0001
+        // Get count for roll number
+        $count  = self::count() + 1;
         $rollNo = str_pad($count, 4, '0', STR_PAD_LEFT);
 
-        // Build test ID - TST + EL + 0001 + 2024
+        // Build 12 digit test ID
         $testId = 'TST' . $typeCode . $rollNo . date('Y');
 
-        // Return only 12 characters
         return substr($testId, 0, 12);
     }
 }

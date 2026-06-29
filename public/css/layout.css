@@ -1,0 +1,123 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #F8F8F6;
+    color: #2C2C2A;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+.logo-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 32px;
+    background: linear-gradient(90deg,#26215C,#534AB7);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 46px;
+    height: 46px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-icon img {
+    width: 36px;
+}
+
+.logo-text h2 {
+    color: white;
+    font-size: 18px;
+}
+
+.logo-text p {
+    color: #CECBF6;
+    font-size: 11px;
+}
+
+/* NAV */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #CECBF6;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: white;
+}
+
+/* LOGIN BUTTON */
+.btn-nav-login {
+    background: white;
+    color: #534AB7 !important;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+main {
+    padding: 28px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.footer {
+    background: #26215C;
+    color: #CECBF6;
+    padding: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+
+.footer h4 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li a {
+    color: #CECBF6;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #534AB7;
+    padding-top: 15px;
+}

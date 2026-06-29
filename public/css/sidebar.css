@@ -1,0 +1,215 @@
+/* ==========================================================
+   SRS LAB AUTOMATION SYSTEM
+   SIDEBAR CSS
+
+   File Name : sidebar.css
+   Location  : public/css/sidebar.css
+   Purpose   : Common Sidebar Layout for All Dashboards
+   Used By   : Admin, Manager, Technician Dashboard
+========================================================== */
+
+
+/* ==========================================================
+   MAIN LAYOUT
+========================================================== */
+
+.sidebar-layout{
+    display:flex;
+    min-height:calc(100vh - 74px);
+}
+
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.sidebar{
+
+    width:240px;
+
+    background:#26215C;
+
+    color:#ffffff;
+
+    flex-shrink:0;
+
+    padding:20px 0;
+
+    overflow-y:auto;
+
+    transition:.3s;
+
+}
+
+
+/* ==========================================================
+   SIDEBAR SECTION TITLE
+========================================================== */
+
+.sidebar-label{
+
+    padding:18px 24px 8px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#9F99F0;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+/* ==========================================================
+   SIDEBAR MENU ITEM
+========================================================== */
+
+.sidebar-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 24px;
+
+    color:#CECBF6;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    border-left:4px solid transparent;
+
+    transition:all .3s ease;
+
+}
+
+
+/* ==========================================================
+   MENU ICON
+========================================================== */
+
+.sidebar-item i{
+
+    font-size:18px;
+
+    width:20px;
+
+    text-align:center;
+
+}
+
+
+/* ==========================================================
+   HOVER EFFECT
+========================================================== */
+
+.sidebar-item:hover{
+
+    background:#3C3489;
+
+    color:#ffffff;
+
+}
+
+
+/* ==========================================================
+   ACTIVE MENU
+========================================================== */
+
+.sidebar-item.active{
+
+    background:#534AB7;
+
+    color:#ffffff;
+
+    border-left:4px solid #ffffff;
+
+}
+
+
+/* ==========================================================
+   MAIN CONTENT
+========================================================== */
+
+.main-content{
+
+    flex:1;
+
+    background:#F8F8F6;
+
+    padding:30px;
+
+    overflow-x:auto;
+
+}
+
+
+/* ==========================================================
+   CUSTOM SCROLLBAR
+========================================================== */
+
+.sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:#534AB7;
+
+    border-radius:10px;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:200px;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.sidebar-layout{
+
+    flex-direction:column;
+
+}
+
+.sidebar{
+
+    width:100%;
+
+}
+
+.main-content{
+
+    padding:18px;
+
+}
+
+.sidebar-item{
+
+    padding:14px 20px;
+
+}
+
+}

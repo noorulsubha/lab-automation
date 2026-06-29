@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.login-page {
+    background-color: #1c1b22; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.login-box {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1020px;
+    height: 660px;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Left Side - Banner */
+.login-banner {
+    background-color: #3b3395; 
+    color: #ffffff;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    padding: 45px;
+}
+
+.banner-content h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.banner-content .subtitle {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.features-list {
+    list-style: none;
+}
+
+.features-list li {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Right Side - Form Container */
+.login-form-container {
+    background-color: #ffffff;
+    width: 55%;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Logo Header */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.logo-box {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    border: 1px solid #e0e0e0;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.logo-area h2 {
+    font-size: 1.15rem;
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+.logo-area p {
+    font-size: 0.75rem;
+    color: #707070;
+}
+
+.login-form-header {
+    margin-bottom: 25px;
+}
+
+.login-form-title {
+    font-size: 1.7rem;
+    color: #2c256d;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+/* Inputs and Groups */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2c256d;
+    margin-bottom: 8px;
+}
+
+.form-label i {
+    margin-right: 5px;
+    color: #707070;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    outline: none;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+select.form-control {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Button */
+.btn-login {
+    width: 100%;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: #3b3395;
+}
+
+/* Credentials Box */
+.credentials-box {
+    background-color: #eef2ff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 25px;
+}
+
+.credentials-box h4 {
+    font-size: 0.85rem;
+    color: #2c256d;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.credentials-box p {
+    font-size: 0.8rem;
+    color: #4f46e5;
+    margin-bottom: 4px;
+}
+
+.credentials-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-box {
+        flex-direction: column;
+        height: auto;
+    }
+    .login-banner, .login-form-container {
+        width: 100%;
+        padding: 35px;
+    }
+}

@@ -1,0 +1,176 @@
+/* ============================================
+   AUTH STYLES
+   Location: public/css/auth.css
+   Purpose: Styles for Login & Logout Pages
+   ============================================ */
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Auth Wrapper --- */
+/* Centers the login card on the page */
+.auth-wrapper {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+/* --- Auth Card --- */
+/* White card that wraps the login form */
+.auth-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 40px 36px;
+}
+
+/* --- Auth Header --- */
+/* Title and subtitle at the top of the card */
+.auth-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.auth-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+.auth-header p {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* --- Form Groups --- */
+/* Wraps each label + input pair */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+/* --- Input Fields --- */
+.form-group input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #111827;
+    background-color: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    background-color: #fff;
+}
+
+/* --- Validation Error Messages --- */
+/* Shown below inputs when validation fails */
+.form-group .error-text {
+    display: block;
+    font-size: 0.8rem;
+    color: #dc2626;
+    margin-top: 5px;
+}
+
+/* --- Submit Button --- */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 8px;
+}
+
+.btn-submit:hover {
+    background-color: #4338ca;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* --- Alert Messages --- */
+/* Used for success and error flash messages from the controller */
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+/* --- Auth Footer --- */
+/* Optional links below the form (e.g. Forgot Password) */
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.auth-footer a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 28px 20px;
+    }
+
+    .auth-header h1 {
+        font-size: 1.5rem;
+    }
+}

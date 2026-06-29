@@ -1,0 +1,159 @@
+/* =========================================
+   LAB AUTOMATION - TEST RECORDS CSS
+   File: tests.css
+   Description: Styling for All Test Records Page
+========================================= */
+
+/* ================= HEADER BUTTONS ================= */
+.btn-add {
+    padding: 10px 20px;
+    background: #534AB7;
+    color: white;
+    border-radius: 9px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-search-link {
+    padding: 10px 20px;
+    background: white;
+    color: #534AB7;
+    border: 1.5px solid #534AB7;
+    border-radius: 9px;
+    text-decoration: none;
+}
+
+/* ================= SUMMARY CARDS ================= */
+.summary-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.summary-card {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    gap: 14px;
+    border: 1px solid rgba(0,0,0,0.07);
+}
+
+/* Icons */
+.sum-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sum-icon.purple { background:#EEEDFE; color:#534AB7; }
+.sum-icon.green  { background:#EAF3DE; color:#27500A; }
+.sum-icon.orange { background:#FAEEDA; color:#633806; }
+.sum-icon.red    { background:#FCEBEB; color:#791F1F; }
+
+/* Numbers */
+.sum-info .num {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.sum-info .lbl {
+    font-size: 11px;
+    color: #888;
+}
+
+/* ================= FILTER BAR ================= */
+.filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.filter-pill {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.filter-pill.all {
+    background: #534AB7;
+    color: white;
+}
+
+.filter-pill.pass {
+    background: #EAF3DE;
+    color: #27500A;
+}
+
+.filter-pill.fail {
+    background: #FCEBEB;
+    color: #791F1F;
+}
+
+.filter-pill.pending {
+    background: #FAEEDA;
+    color: #633806;
+}
+
+/* ================= TABLE ================= */
+.table-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.07);
+    overflow: hidden;
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+.data-table th {
+    background: #F1EFE8;
+    padding: 11px 16px;
+    font-size: 11px;
+    color: #3C3489;
+}
+
+.data-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Hover effect */
+.data-table tr:hover td {
+    background: #F8F8F6;
+}
+
+/* ================= BADGES ================= */
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.badge-pass { background:#EAF3DE; color:#27500A; }
+.badge-fail { background:#FCEBEB; color:#791F1F; }
+.badge-pending { background:#FAEEDA; color:#633806; }
+
+/* ================= ACTION BUTTONS ================= */
+.btn-delete {
+    padding: 5px 10px;
+    background: #FCEBEB;
+    color: #791F1F;
+    border: none;
+    border-radius: 6px;
+}

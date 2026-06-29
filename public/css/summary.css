@@ -1,0 +1,107 @@
+/* ==========================================================
+   TEST SUMMARY CARDS
+   File: summary.css
+   Purpose: Styling for summary cards section
+========================================================== */
+
+.summary-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    margin-bottom:25px;
+
+}
+
+.summary-card{
+
+    background:#ffffff;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.summary-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.sum-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#ffffff;
+
+    font-size:26px;
+
+}
+
+.purple{
+
+    background:#534AB7;
+
+}
+
+.green{
+
+    background:#16A34A;
+
+}
+
+.red{
+
+    background:#DC2626;
+
+}
+
+.orange{
+
+    background:#F59E0B;
+
+}
+
+.summary-content h2{
+
+    margin:0;
+
+    font-size:28px;
+
+    color:#1E293B;
+
+}
+
+.summary-content p{
+
+    margin-top:6px;
+
+    color:#64748B;
+
+    font-size:14px;
+
+}

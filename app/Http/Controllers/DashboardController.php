@@ -19,12 +19,14 @@ class DashboardController extends Controller
 
         // Temporary static data for testing
         // Will be replaced with DB queries later
-        $totalTests   = 0;
-        $passedTests  = 0;
-        $failedTests  = 0;
+        
+        $totalTests = 0;
+        $testsPassed = 0;
+        $testsFailed = 0;
         $pendingTests = 0;
         $totalProducts = 0;
-        $recentTests  = [];
+        $recentTests = [];
+
 
         // Chart data - empty for now
         $chartData = [
@@ -37,15 +39,15 @@ class DashboardController extends Controller
         $monthlyData = collect([]);
 
         return view('dashboard', compact(
-            'user',
-            'totalTests',
-            'passedTests',
-            'failedTests',
-            'pendingTests',
-            'totalProducts',
-            'recentTests',
-            'chartData',
-            'monthlyData'
-        ));
+        'user',
+        'totalTests',
+        'testsPassed',
+        'testsFailed',
+        'pendingTests',
+        'totalProducts',
+        'recentTests',
+        'chartData',
+        'monthlyData'
+));
     }
 }

@@ -13,22 +13,21 @@ use App\Http\Controllers\ProfileController;
 // PUBLIC ROUTES
 // =========================
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/', [HomeController::class, 'index'])->name('welcome')->withoutMiddleware(['auth']);
+Route::get('/home', [HomeController::class, 'index'])->name('home')->withoutMiddleware(['auth']);
+Route::get('/about', [HomeController::class, 'about'])->name('about')->withoutMiddleware(['auth']);
+
 
 // Contact
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact')->withoutMiddleware(['auth']);
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store')->withoutMiddleware(['auth']);
+
 
 // Login / Logout
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->withoutMiddleware(['auth']);
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit')->withoutMiddleware(['auth']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
 
 // =========================
 // PROTECTED ROUTES (Requires Authentication)

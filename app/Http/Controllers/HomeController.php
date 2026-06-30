@@ -16,18 +16,29 @@ class HomeController extends Controller
     // URL: GET /
     // Purpose: Show home page
     // ----------------------------------------
+    // public function index()
+    // {
+    //     // Stats shown on home page stats bar
+    //     $stats = [
+    //         'total_tested' => 500,
+    //         'test_types'   => 12,
+    //         'pass_rate'    => 98,
+    //     ];
+
+    //     return view('home', compact('stats'));
+    // }
+
+
     public function index()
-    {
-        // Stats shown on home page stats bar
-        $stats = [
-            'total_tested' => 500,
-            'test_types'   => 12,
-            'pass_rate'    => 98,
-        ];
+{
+    $stats = [
+        'total_tested' => 500,
+        'test_types'   => 12,
+        'pass_rate'    => 98,
+    ];
 
-        return view('home', compact('stats'));
-    }
-
+    return view('home', compact('stats'));
+}
     // ----------------------------------------
     // about()
     // URL: GET /about

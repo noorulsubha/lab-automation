@@ -1,72 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {{-- Character Encoding --}}
-    <meta charset="UTF-8">
 
-    {{-- Responsive Layout --}}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{-- ============================================
+     HEADER
+     Location: resources/views/partials/header.blade.php
+     Purpose: Global Navigation Header
+     Project: SRS Lab Automation
+============================================ --}}
 
-    {{-- =========================================
-         SEO META TAGS
-         Improve search engine visibility
-    ========================================= --}}
-    <meta name="description" content="SRS Lab Automation System for electrical product testing and management">
-    <meta name="keywords" content="lab automation, testing system, SRS electrical, product testing, CPRI lab">
+<header class="logo-bar">
 
-    {{-- =========================================
-         PAGE TITLE
-    ========================================= --}}
-    <title>SRS LabAuto — @yield('title', 'www.srselectrical.com')</title>
-   
-    {{-- =========================================
-         FAVICON (Browser Tab Icon)
-    ========================================= --}}
-    <link rel="icon" type="image/jpeg" href="{{ asset('images/logo.jpeg') }}">
+    {{-- =====================================
+         LEFT SIDE - LOGO
+    ====================================== --}}
+    <div class="logo-area">
 
-    {{-- =========================================
-         THIRD-PARTY FONTS & ICONS (CDNs)
-    ========================================= --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+        <a href="{{ route('home') }}" style="text-decoration:none; display:flex; align-items:center; gap:12px;">
 
-    {{-- =========================================
-         GLOBAL CSS LAYOUTS
-    ========================================= --}}
-    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+            <div class="logo-icon">
+                <img src="{{ asset('images/logo.jpeg') }}"
+                     alt="SRS LabAuto Logo">
+            </div>
 
-    {{-- =========================================
-         PAGE SPECIFIC CSS
-         (Used in child pages via @push('styles'))
-    ========================================= --}}
-    @stack('styles')
-</head>
+            <div class="logo-text">
+                <h2>SRS LabAuto</h2>
+                <p>Electrical Testing Management System</p>
+            </div>
 
-<body>
+        </a>
 
-    {{-- =========================================
-         HEADER SECTION
-    ========================================= --}}
-    @include('partials.header')
+    </div>
 
-    {{-- =========================================
-         MAIN CONTENT AREA
-         All page content loads here
-    ========================================= --}}
-    <main>
-        @yield('content')
-    </main>
+    {{-- =====================================
+         CENTER - NAVIGATION MENU
+    ====================================== --}}
+    <nav class="nav-links">
 
-    {{-- =========================================
-         FOOTER SECTION
-    ========================================= --}}
-    @include('partials.footer')
+        <a href="{{ route('home') }}"
+           class="{{ request()->routeIs('home') ? 'active' : '' }}">
+            <i class="ti ti-home"></i>
+            Home
+        </a>
 
-    {{-- =========================================
-         PAGE SPECIFIC SCRIPTS
-         (Used in child pages via @push('scripts'))
-    ========================================= --}}
-    @stack('scripts')
+        <a href="{{ route('about') }}"
+           class="{{ request()->routeIs('about') ? 'active' : '' }}">
+            <i class="ti ti-info-circle"></i>
+            About
+        </a>
 
-</body>
-</html>
+        <a href="{{ route('contact') }}"
+           class="{{ request()->routeIs('contact') ? 'active' : '' }}">
+            <i class="ti ti-phone"></i>
+            Contact
+        </a>
+
+        @auth
+
+        <a href="{{ route('dashboard') }}"
+           class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
+            <i class="ti ti-layout-dashboard"></i>
+            Dashboard
+        </a>
+
+        @endauth
+
+    </nav>
+
+    {{-- =====================================
+         RIGHT SIDE - LOGIN / USER
+    ====================================== --}}
+    <div style="display:flex; align-items:center; gap:12px;">
+
+        @guest
+
+            <a href="{{ route('login') }}" class="btn-nav-login">
+                <i class="ti ti-login"></i>
+                Login
+            </a>
+
+        @else
+
+            <span style="color:white; font-size:14px;">
+                <i class="ti ti-user-circle"></i>
+                {{ Auth::user()->name }}
+            </span>
+
+            <form action="{{ route('logout') }}"
+                  method="POST">
+
+                @csrf
+
+                <button type="submit"
+                        class="btn-nav-login"
+                        style="border:none;cursor:pointer;">
+                    <i class="ti ti-logout"></i>
+                    Logout
+                </button>
+
+            </form>
+
+        @endguest
+
+    </div>
+
+</header>

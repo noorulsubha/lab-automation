@@ -111,3 +111,77 @@ background:#FAEEDA;
 color:#633806;
 
 }
+/*====================================
+STATISTICS CARDS
+====================================*/
+
+.card{
+    border:none;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    font-size:30px;
+    font-weight:700;
+    color:#26215C;
+}
+
+.bg-success-light{
+    background:#EAF8EC;
+}
+
+.bg-danger-light{
+    background:#FDECEC;
+}
+
+/*====================================
+TABLE
+====================================*/
+
+.table{
+    margin-bottom:0;
+}
+
+.table thead{
+    background:#534AB7;
+    color:#fff;
+}
+
+.table thead th{
+    border:none;
+    padding:15px;
+}
+
+.table tbody td{
+    padding:14px;
+    vertical-align:middle;
+}
+
+/*====================================
+BUTTONS
+====================================*/
+
+.btn-primary{
+    background:#534AB7;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#26215C;
+}
+
+/*====================================
+BADGES
+====================================*/
+
+.badge{
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:12px;
+}

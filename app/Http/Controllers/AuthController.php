@@ -1,9 +1,4 @@
 <?php
-// ============================================
-// AUTH CONTROLLER
-// Location: app/Http/Controllers/AuthController.php
-// Purpose: Handles User Authentication (Login & Logout)
-// ============================================
 
 namespace App\Http\Controllers;
 
@@ -12,9 +7,14 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    // ===========================
-    // Show Login Page
-    // ===========================
+    /*
+    |--------------------------------------------------------------------------
+    | Display Login Page
+    |--------------------------------------------------------------------------
+    | If the user is already authenticated, redirect to the dashboard.
+    | Otherwise, display the login page.
+    |--------------------------------------------------------------------------
+    */
     public function showLogin()
     {
         if (Auth::check()) {
@@ -24,14 +24,20 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    // ===========================
-    // Login User
-    // ===========================
+    /*
+    |--------------------------------------------------------------------------
+    | Authenticate User
+    |--------------------------------------------------------------------------
+    | Validate the login request, authenticate the user,
+    | create a new session and redirect to the dashboard.
+    |--------------------------------------------------------------------------
+    */
     public function login(Request $request)
     {
-        $credentials = $request->validate([
-            'username' => 'required|min:3',
-            'password' => 'required|min:6',
+        // Validate user input
+        $request->validate([
+            'username' => 'required|string|min:3',
+            'password' => 'required|string|min:6',
         ], [
             'username.required' => 'Username is required.',
             'password.required' => 'Password is required.',
@@ -39,27 +45,45 @@ class AuthController extends Controller
             'password.min'      => 'Password must be at least 6 characters.',
         ]);
 
+        // Create authentication credentials
+        $credentials = [
+            'username' => $request->username,
+            'password' => $request->password,
+        ];
+
+        // Attempt user authentication
         if (Auth::attempt($credentials)) {
 
+            // Regenerate session to prevent session fixation
             $request->session()->regenerate();
 
+            // Store user information in the session
             session([
                 'user_name' => Auth::user()->name,
                 'user_role' => Auth::user()->role,
             ]);
 
-            return redirect()->intended(route('dashboard'))
+            // Redirect authenticated user to dashboard
+            return redirect()->route('dashboard')
                 ->with('success', 'Login Successful!');
         }
 
+        // Redirect back if authentication fails
         return back()
             ->withInput($request->only('username'))
-            ->with('error', 'Invalid Username or Password.');
+            ->withErrors([
+                'username' => 'Invalid Username or Password.'
+            ]);
     }
 
-    // ===========================
-    // Logout User
-    // ===========================
+    /*
+    |--------------------------------------------------------------------------
+    | Logout User
+    |--------------------------------------------------------------------------
+    | Log out the authenticated user, invalidate the session,
+    | regenerate the CSRF token and redirect to the login page.
+    |--------------------------------------------------------------------------
+    */
     public function logout(Request $request)
     {
         Auth::logout();

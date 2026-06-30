@@ -37,7 +37,7 @@
             </div>
 
             <div class="login-form-header">
-                <h2 class="login-form-title">Welcome Back</h2>
+                <h2 class="login-form-title">Welcome Login Page</h2>
                 <p style="color: #757575; font-size: 14px; margin: 0;">Please enter your username and password</p>
             </div>
 

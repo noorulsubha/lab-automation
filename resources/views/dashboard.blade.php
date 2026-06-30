@@ -1,4 +1,16 @@
-@extends('layouts.app') {{-- Aapka main layout file --}}
+
+@extends('layouts.app')
+
+@section('title', 'Dashboard - SRS Lab Automation')
+
+{{-- =========================================
+     Dashboard Page CSS
+     Loads dashboard specific styles
+========================================= --}}
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+@endpush
+
 
 @section('content')
 <div class="container-fluid">

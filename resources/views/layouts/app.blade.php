@@ -19,6 +19,12 @@
     ========================================= --}}
     <title>SRS LabAuto — @yield('title', 'www.srselectrical.com')</title>
    
+<!-- ==========================================
+     Bootstrap 5 CSS
+========================================== -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
     {{-- =========================================
          FAVICON (Browser Tab Icon)
     ========================================= --}}
@@ -41,6 +47,12 @@
     ========================================= --}}
     @stack('styles')
 </head>
+
+
+<!-- ==========================================
+     Bootstrap 5 JavaScript Bundle
+========================================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <body>
 

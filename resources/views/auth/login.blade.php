@@ -26,36 +26,36 @@
             </div>
         </div>
 
-        <div class="login-form-container">
+<div class="login-form-container">
             
-            <div class="logo-area">
-                <div class="logo-box">SRS</div>
-                <div>
-                    <h2>SRS LabAuto</h2>
-                    <p>Lab Automation System</p>
-                </div>
-            </div>
+<!-- Login Page Logo -->
+<div class="login-logo">
+<div class="logo-icon">
+<img src="{{ asset('images/logo.jpeg') }}"
+alt="SRS LabAuto Logo">
+<h4>Lab Automation System</h4>
+</div>
+</div>
 
-            <div class="login-form-header">
-                <h2 class="login-form-title">Welcome Login Page</h2>
-                <p style="color: #757575; font-size: 14px; margin: 0;">Please enter your username and password</p>
-            </div>
+<div class="login-form-header">
+<h2 class="login-form-title">Welcome Login Page</h2>
+</div>
 
-            @if ($errors->any())
-                <div class="alert-error" style="background: #fce8e6; color: #a94442; border: 1px solid #f5c6cb; padding: 12px 15px; margin-bottom: 20px; border-radius: 8px; font-size: 14px;">
-                    <ul style="margin: 0; padding-left: 20px; font-weight: 500;">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+@if ($errors->any())
+<div class="alert-error" style="background: #fce8e6; color: #a94442; border: 1px solid #f5c6cb; padding: 12px 15px; margin-bottom: 20px; border-radius: 8px; font-size: 14px;">
+<ul style="margin: 0; padding-left: 20px; font-weight: 500;">
+@foreach ($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+</ul>
+</div>
+@endif
 
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
+<form method="POST" action="{{ route('login') }}">
+@csrf
 
-                <div class="form-group">
-                    <label for="username" class="form-label">
+<div class="form-group">    
+<label for="username" class="form-label">
                         <i class="fa-regular fa-user"></i> Username
                     </label>
                     <input 

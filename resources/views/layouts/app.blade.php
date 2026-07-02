@@ -65,10 +65,10 @@
          MAIN CONTENT AREA
          All page content loads here
     ========================================= --}}
-    <main>
-        @yield('content')
-    </main>
 
+     <main class="{{ request()->routeIs('login') ? 'login-main' : '' }}">
+    @yield('content')
+     </main>
     {{-- =========================================
          FOOTER SECTION
     ========================================= --}}

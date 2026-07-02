@@ -7,13 +7,18 @@
     font-family: 'Inter', sans-serif;
 }
 
-.login-page {
-    background-color: #1c1b22; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+/* =========================================
+   Login Page
+========================================= */
+
+.login-page{
+
+    background:#1c1b22;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:calc(100vh - 90px);
+    padding:40px 20px;
 }
 
 /* Container */
@@ -76,11 +81,12 @@
 }
 
 /* Logo Header */
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 25px;
+
+.login-logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:25px;
 }
 
 .logo-box {
@@ -94,15 +100,15 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.logo-area h2 {
-    font-size: 1.15rem;
-    color: #1a1a1a;
-    font-weight: 700;
+.login-logo-area h2{
+    font-size:1.15rem;
+    color:#1a1a1a;
+    font-weight:700;
 }
 
-.logo-area p {
-    font-size: 0.75rem;
-    color: #707070;
+.login-logo-area p{
+    font-size:0.75rem;
+    color:#707070;
 }
 
 .login-form-header {

@@ -8,10 +8,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Test;
 
 class Product extends Model
 {
-    // Fields that can be filled
+    // Table Name (Optional)
+    protected $table = 'products';
+
+    // Mass Assignable Fields
     protected $fillable = [
         'product_id',
         'name',
@@ -21,8 +25,7 @@ class Product extends Model
         'image',
     ];
 
-    // One product has many tests
-    // Links products table to tests table
+    // One Product has Many Tests
     public function tests()
     {
         return $this->hasMany(

@@ -8,6 +8,9 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+
 
 // =========================
 // PUBLIC ROUTES
@@ -34,13 +37,41 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // =========================
 Route::middleware(['auth'])->group(function () {
 
-    // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+// Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    // Profile
-    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+// Profile
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
-    // Tests CRUD & Search
+// Users
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
+
+// Edit User
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+
+// Update User
+Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+
+// Delete User
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+
+// Products
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+
+// Edit Product
+Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+
+// Update Product
+Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+
+// Delete Product
+Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+// Tests CRUD & Search
     Route::get('/tests', [TestController::class, 'index'])->name('tests.index');
     Route::get('/tests/create', [TestController::class, 'create'])->name('tests.create');
     Route::post('/tests', [TestController::class, 'store'])->name('tests.store');
